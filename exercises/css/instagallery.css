@@ -18,6 +18,16 @@ body {
 		text-align: center;
 		width: 100%;
 	}
+	p {
+		margin: 0 0 10px;
+		text-align: center;
+	}
+	a, a:visited {
+		color: #f05b62;
+	}
+	a:focus, a:hover {
+		color: #01a9b4;
+	}
 	div#wrapper {
 		height: 100%;
 		overflow: auto;
@@ -64,4 +74,9 @@ body {
 			}
 		.clear {
 			clear: both;
+		}
+		.offscreen {
+			display: block;
+			left: -50000px;
+			position: absolute;
 		}
