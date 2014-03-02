@@ -93,7 +93,7 @@
           <h3>What is a library?</h3>
           <div class="left-align">
             <p>Include a script tag to the library on your page</p>
-            <p>Call functions from that library</p>
+            <p>Call functions from <a href="http://imagine-it.org/math.js" target="_blank" title="Link opens in a new window">that library</a></p>
           </div>
           <pre><code class="javascript">
             &lt;script src="http://imagine-it.org/math.js"&gt;&lt;/script&gt;
@@ -104,10 +104,29 @@
           </code></pre>
         </section>
         
+        <section>
+          <h3>Including JavaScript</h3>
+          <h4>Put scripts at the bottom</h4>
+          <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Sweet HTML&lt;/title&gt;
+    &lt;link rel="stylesheet" href="stylesheets.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+  &lt;script src="scripts-go-here.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+          <p><small>Read more: <a href="http://developer.yahoo.com/performance/rules.html#css_top" target="_blank" title="Link opens in a new window">http://developer.yahoo.com/performance/rules.html#css_top</a></small></p>
+        </section>
         <!-- JS Basics -->
         <section>
           <h3>JavaScript Basics</h3>
-          <h4>Let's brush up</h4>
+          <h4>Let's review</h4>
+          <p>Variables, arrays and loops</p>
           <pre><code class="javascript">
             var wordArray = ['hamburgers', 'schnikes', 'holy crab'];
             for (var i=0; i < wordArray.length; i++) {
@@ -115,6 +134,7 @@
               console.log(i);
             };
           </code></pre>
+          <p>Selecting and altering DOM elements</p>
           <pre><code class="javascript">
             var containerDiv = document.createElement('div');
             containerDiv.setAttribute('id', 'containerDiv');
@@ -143,9 +163,9 @@
         <!-- Why libraries? -->
         <section>
           <h3>Why use libraries?</h3>
-          <p>Write less code for common tasks.</p>
+          <p>Don't reinvent the wheel.</p>
           <p>Abstract on top of cross-browser differences.</p>
-          <img src="images/jquery.png" alt="Reasons to use jQuery">
+          <a href="http://davidwalsh.name/6-reasons-to-use-javascript-libraries-frameworks" target="_blank" title="6 Reasons to use Libraries & Frameworks: Link opens in a new window"><img src="images/jquery.png" alt="Reasons to use jQuery"></a>
           <ul class="offscreen">
             <li>Data Manipulation</li>
             <li>DOM Manipulation</li>
@@ -164,20 +184,20 @@
           <h3>jQuery: Why?</h3>
           <p>No library:</p>
           <pre><code class="javascript">
-            var p = document.createElement('p');
-            p.appendChild(document.createTextNode('Welcome!'));
-            p.style.cssFloat = 'left';
-            p.style.backgroundColor = 'red';
-            p.className = 'special';
-            document.querySelector('div.header').appendChild(p);
+  var p = document.createElement('p');
+  p.appendChild(document.createTextNode('Welcome!'));
+  p.style.cssFloat = 'left';
+  p.style.backgroundColor = 'red';
+  p.className = 'special';
+  document.querySelector('div.header').appendChild(p);
           </code></pre>
           <p>jQuery:</p>
           <pre><code class="javascript">
-            var newP = $('&lt;p&gt;Welcome!&lt;/p&gt;');
-            newP.css({'float' : 'left', 
-                      'background-color': 'red'});
-            newP.addClass('special');
-            $('div.header').append(newP);
+  var newP = $('&lt;p&gt;Welcome!&lt;/p&gt;');
+  newP.css({'float' : 'left', 
+            'background-color': 'red'});
+  newP.addClass('special');
+  $('div.header').append(newP);
           </code></pre>
         </section>
           
@@ -187,160 +207,165 @@
           <p>Download or link from an official CDN.</p>
           <p>Then include using a &lt;script&gt; tag on the page.</p>
 <pre><code class="html">
-&lt;html&gt;
-&lt;body&gt;
-  &lt;h1&gt;Hi!&lt;/h1&gt;
-  &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
   &lt;script&gt;
-    // Your code here
+    // Your custom code here
   &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
 </code></pre>
+<p>Or be super prepared:</p>
+<pre><code class="html">
+  &lt;script src="http://code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    window.jQuery || document.write('&lt;script src="js/jquery.min.js"&gt;&lt;\/script&gt;')&gt;
+  &lt;/script&gt;
+</code></pre> 
         </section>
 
         <!-- jQuery: the basics -->
         <section>
           <h3>jQuery: the basics</h3>
-<pre><code class="html center">
+<pre><code class="html">
 &lt;p&gt;Welcome to jQuery!&lt;/p&gt;
 </code></pre>
-<pre><code class="javascript center">
+<span class="down-arrow"></span>
+<pre><code class="javascript">
 $('p').addClass('special');
 </code></pre>
-<pre><code class="html center">
+<span class="down-arrow"></span>
+<pre><code class="html">
 &lt;p class="special"&gt;Welcome to jQuery!&lt;/p&gt;
 </code></pre>
         </section>
 
+        <!-- jQuery: the basics -->
         <section>
           <h3>jQuery: the basics</h3>  
-<pre><code class="javascript center">
-$('p').addClass('special');
+<pre><code class="javascript">
+                    $('p').addClass('special');
 </code></pre>
-          <div class="col col3">
-<pre><code class="javascript center">
-$
-</code></pre>
-            <p>The global jQuery function.
-            Can also be "jQuery".</p>
-          </div>    
-          <div class="col col3">
-<pre><code class="javascript center">
-('p')
-</code></pre>
-            <p>Finds DOM element(s) according to what's in the quotes. 
-            Returns a "jQuery collection."</p>
-          </div>
-          <div class="col col3">
-<pre><code class="javascript center">
-addClass('special')
-</code></pre>
-            <p>Built-in jQuery method that adds the specified class to the collection. 
-            <a href="http://api.jquery.com/addClass/" target="_blank" title="Link opens in a new window">Read the docs here</a>.</p>
+          <div class="columns">
+            <div class="col col3">
+  <pre><code class="javascript">
+          $
+  </code></pre>
+              <p>The global jQuery function.
+              Can also be "jQuery".</p>
+            </div>    
+            <div class="col col3">
+  <pre><code class="javascript">
+        ('p')
+  </code></pre>
+              <p>Finds DOM element(s) according to what's in the quotes. 
+              Returns a "jQuery collection."</p>
+            </div>
+            <div class="col col3">
+  <pre><code class="javascript">
+ addClass('special')
+  </code></pre>
+              <p>Built-in jQuery method that adds the specified class to the collection. 
+              <a href="http://api.jquery.com/addClass/" target="_blank" title="Link opens in a new window">Read the docs here.</a></p>
+            </div>
           </div>
         </section>
 
         <section>
           <h3>jQuery: Finding Elements</h3>
           <p>All CSS selectors are valid, plus more. <a href="http://api.jquery.com/category/selectors/" target="_blank" title="Link opens in a new window">Read the docs</a>.</p>
-          <div class="col col2">
-            <h4 class="smaller">With this HTML...</h4>
-<pre><code class="html">
+          <div class="columns">
+            <div class="col col2 first">
+              <p>With this HTML...</p>
+              <pre><code class="html">
 &lt;p&gt;Welcome!&lt;/p&gt;
-</code></pre>
-<pre><code class="html">
+              </code></pre>
+              <pre><code class="html">
 &lt;div id="main"&gt;Welcome!&lt;/div&gt;
-</code></pre>
-<pre><code class="html">
+              </code></pre>
+              <pre><code class="html">
 &lt;p class="intro"&gt;Welcome!&lt;/p&gt;
-</code></pre>
-<pre><code class="html">
+              </code></pre>
+              <pre><code class="html">
 &lt;div id="main"&gt;
   &lt;p class="intro"&gt;Welcome!&lt;/p&gt;
 &lt;/div&gt;
-</code></pre>
-          </div>
-          <div class="col col2">
-            <h4 class="smaller">We find it this way:</h4>
-<pre><code class="javascript">
+              </code></pre>
+            </div>
+            <div class="col col2">
+              <p>We find it this way:</p>
+              <pre><code class="javascript">
 $('p');
-</code></pre>
-<pre><code class="javascript">
+              </code></pre>
+              <pre><code class="javascript">
 $('#main');
-</code></pre>
-<pre><code class="javascript">
+              </code></pre>
+              <pre><code class="javascript">
 $('.intro');
-</code></pre>
-<pre><code class="javascript">
+              </code></pre>
+              <pre><code class="javascript">
+$('#main').find('.intro');
+// or
 $('#main .intro');
-</code></pre>
+              </code></pre>
+              </div>
           </div>
         </section>
+
         <section>
           <h3>jQuery: Changing Elements</h3>
           <p>If we start with this HTML:</p>
-<pre><code class="html">
+          <pre><code class="html">
 &lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;
-</code></pre>
+          </code></pre>
           <p>We can use this jQuery:</p>
-<pre><code class="javascript">
+          <pre><code class="javascript">
 $('a').html('Yahoo!')
 $('a').attr('href', 'http://www.yahoo.com')
 $('a').css({'color': 'purple'})
-</code></pre>
+          </code></pre>
           <p>And we'll get this:</p>
-<pre><code class="html">
+          <pre><code class="html">
 &lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;
-</code></pre>
+          </code></pre>
         </section>
+
         <section>
           <h3>jQuery: Reading Elements</h3>
           <p>If we start with this HTML...</p>
-<pre><code class="html">
+          <pre><code class="html">
 &lt;a href="http://www.yahoo.com" style="color: purple;"&gt;Yahoo!&lt;/a&gt;
-</code></pre>
+          </code></pre>
           <p>...We can find out lots of things about it:</p>
-          <div class="code-explanations">
+          <div class="code-explanation">
             <div class="code">
   <pre><code class="javascript">
   console.log($('a').html());
   </code></pre>
             </div>
-            <div class="arrow">
-            →
-            </div>
             <div class="output">
               <p>Yahoo!</p>
             </div>
           </div>
-          <div class="code-explanations">
+          <div class="code-explanation">
             <div class="code">
   <pre><code class="javascript">
   console.log($('a').attr('href'));
   </code></pre>
             </div>
-            <div class="arrow">
-            →
-            </div>
             <div class="output">
               <p>http://www.yahoo.com</p>
             </div>
           </div>
-          <div class="code-explanations">
+          <div class="code-explanation">
             <div class="code">
   <pre><code class="javascript">
   console.log($('a').css('color'));
   </code></pre>
-            </div>
-            <div class="arrow">
-            →
             </div>
             <div class="output">
               <p>purple</p>
             </div>
           </div>
         </section>
+        
         <section>
           <h3>jQuery: Looping</h3>
           <p class="orig"><a href="http://yahoo.com">Yahoo</a><br>
