@@ -124,7 +124,20 @@
         
         <section>
           <h3>Let's Develop It!</h3>
-          <p>In <a href="exercises/exercise1.html" target="_blank" title="Link opens in a new window">exercise 1</a>, you'll turn an unordered list of link titles into a linked list of thumbnails, using JavaScript DOM manipulation.</p>
+          <p>In <a href="exercises/exercise1.html" target="_blank" title="Link opens in a new window">exercise 1</a>, you'll turn a linked list of titles into a linked list with thumbnails, using JavaScript DOM manipulation and the functions from the youtube.JS library (<a href="http://www.teaching-materials.org/jquery/youtube_doc.html" target="_blank" title="Link opens in a new window">read documentation</a>).</p>
+          <h4><small>Step by Step:</small></h4>
+          <ul class="small">
+            <li>Create an array of every link on the page using <a href="https://developer.mozilla.org/en-US/docs/Web/API/element.getElementsByTagName" target="_blank" title="Link opens with new window">document.getElementsByTagName(tagName)</a></li>
+            <li>Iterate through the array. In each iteration of the loop:
+              <ul>
+                <li>Find the current href using <a href="https://developer.mozilla.org/en-US/docs/DOM/element.getAttribute" target="_blank" title="Link opens with new window">element.getAttribute(name)</a>, and store into a variable</li>
+                <li>Generate a thumbnail URL using <a href="http://www.teaching-materials.org/jquery/youtube_doc.html" target="_blank" title="Link opens in a new window">youtube.generateThumbnailUrl(videoUrl)</a></li>
+                <li>Create an IMG element using <a href="https://developer.mozilla.org/en-US/docs/DOM/document.createElement" target="_blank" title="Link opens with new window">document.createElement(tagName)</a></li>
+                <li>Set the "src" of the IMG element using <a href="https://developer.mozilla.org/en-US/docs/DOM/element.setAttribute" target="_blank" title="Link opens with new window">element.setAttribute(name, value)</a></li>
+                <li>Append the IMG to the link using <a href="https://developer.mozilla.org/en-US/docs/DOM/Node.appendChild" target="_blank" title="Link opens with new window">element.appendChild(element)</a></li>
+              </ul>
+            </li>
+          </ul>
         </section>
         
         <!-- Why libraries? -->
