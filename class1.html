@@ -40,7 +40,7 @@
 			<div class="slides">
 			  <!-- Opening slide -->
         <section>
-          <img src = "images/gdi_logo_badge.png">
+          <img src="images/gdi_logo_badge.png">
           <h1 class="h3-style">Intro to jQuery</h1>
           <h2 class="h4-style">Class 1</h2>
         </section>
@@ -48,7 +48,7 @@
         <!-- Welcome-->
         <section class="hide-pdf">
           <h3>Welcome!</h3>
-          <div class = "left-align">
+          <div class="left-align">
           <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
           <p class ="green">Some "rules"</p>
           <ul>
@@ -62,13 +62,15 @@
         
         <section>
           <h3>Welcome!</h3>
-          <div class = "left-align">
-          <p class = "blue">Tell us about yourself.</p>
+          <div class="left-align">
+          <p class="blue">Tell us about yourself.</p>
           <ul>
             <li>Who are you?</li>
             <li>What do you hope to get out of the class?</li>
             <li>What is your favorite decade?</li>
-            <img src="images/80s.png" alt="My favorite decade: the 80s" />
+            <div style="text-align: center">
+              <img src="images/80s.png" alt="My favorite decade: the 80s" />
+            </div>
           </ul>
           </div>
         </section>
@@ -76,11 +78,11 @@
         <!-- What is a library?-->
         <section>
           <h3>What is a library?</h3>
-          <div class = "left-align">
+          <div class="left-align">
             <p>A collection of reusable methods for a particular purpose.</p>
             <p>A math library might have functions like:</p>
           </div>
-          <pre><code class = "javascript">
+          <pre><code class="javascript">
             math.sum(array);
             math.pow(num, num);
             math.factorial(num);
@@ -89,11 +91,11 @@
         
         <section>
           <h3>What is a library?</h3>
-          <div class = "left-align">
+          <div class="left-align">
             <p>Include a script tag to the library on your page</p>
             <p>Call functions from that library</p>
           </div>
-          <pre><code class = "javascript">
+          <pre><code class="javascript">
             &lt;script src="http://imagine-it.org/math.js"&gt;&lt;/script&gt;
             &lt;script&gt;
               var answer = math.sum(2, 2);
@@ -106,14 +108,14 @@
         <section>
           <h3>JavaScript Basics</h3>
           <h4>Let's brush up</h4>
-          <pre><code class = "javascript">
+          <pre><code class="javascript">
             var wordArray = ['hamburgers', 'schnikes', 'holy crab'];
             for (var i=0; i < wordArray.length; i++) {
               console.log(wordArray[i]);
               console.log(i);
             };
           </code></pre>
-          <pre><code class = "javascript">
+          <pre><code class="javascript">
             var containerDiv = document.createElement('div');
             containerDiv.setAttribute('id', 'containerDiv');
             document.body.appendChild(containerDiv);
