@@ -15,7 +15,7 @@ var Instagallery = function() {
 	this.listItems = this.list.find('li');
 	
 	// variables 
-	this.accessToken = '1339701.43a8c1d.be7cb0ae891949958d3f08d0c935304b';
+	this.accessToken = '1124578234.b3722f0.42d8a8bf68674fc2895b912580748749';
 	this.totalImages = 0;
 	this.imgWidth = 0;
 	
