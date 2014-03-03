@@ -49,7 +49,9 @@
   }
 
 /* LAYOUTS */
-
+.reveal .gray {
+  color: #999;
+}
 .down-arrow {
   display: block;
   text-align: center;
