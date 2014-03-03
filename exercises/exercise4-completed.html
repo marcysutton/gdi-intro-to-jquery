@@ -27,7 +27,8 @@
 		    url: "kitty-ipsum.json",  
 		    dataType: "json",
 		    success: function(response) { 
-		    	
+		    	console.log(response);
+		    	$('#content').find('p').html(response.data);
 		    }  
 		});  
 	});
