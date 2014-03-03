@@ -28,10 +28,10 @@
     <script src="js/youtube.js"></script>
     <script>
       var elLinkList = document.getElementById('video-links'),
-          elVideoListItems = elLinkList.getElementsByTagName('li');
+          elVideoListItems = elLinkList.getElementsByTagName('a');
       
       for(var i=0; i<elVideoListItems.length; i++){
-        var href = elVideoListItems[i].firstChild.getAttribute('href');
+        var href = elVideoListItems[i].getAttribute('href');
 
         var image = document.createElement('img');
         image.setAttribute('src', youtube.generateThumbnailUrl(href));
