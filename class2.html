@@ -72,7 +72,7 @@ $('#button').on('click', clickHandler);
           </code></pre>
           <p>Or bind an anonymous function:</p>
           <pre><code class="javascript">
-$('#button').on('click', function () {
+$('#button').on('click', function() {
   console.log('clicked!');
 });
           </code></pre>
@@ -82,7 +82,7 @@ $('#button').on('click', function () {
           <h3>The Event Object</h3>
           <p>The 'event' parameter provides a return value that is treated in a special way, telling us a variety of things about our event, such as the type or target element.</p>
           <pre><code class="javascript">
-$('a').on('click keypress', function (event) {
+$('a').on('click keypress', function(event) {
   console.log(event);
   
   if(event.type === 'keypress'){
@@ -96,12 +96,26 @@ $('a').on('click keypress', function (event) {
           <h3>Events</h3>
           <p>Preventing default actions</p>
           <pre><code class="javascript">
-$('form').on('submit', function (event) {
-  event.preventDefault();
+  $('form').on('submit', function(event) {
+    event.preventDefault();
 
-  console.log('Not submitting the form!');
-  // Maybe I want to do stuff first.
-});
+    console.log('Not submitting the form!');
+    // Maybe I want to do stuff first.
+  });
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Events</h3>
+          <p>Keeping Track of Scope</p>
+          <pre><code class="javascript">
+  var _this = this;
+  console.log(_this);
+
+  $('a').on('click', function(event) {
+    console.log(this);
+    console.log(_this);
+  });
           </code></pre>
         </section>
 
@@ -149,17 +163,37 @@ banner.css('color', 'red')
           <p>"Asynchronous JavaScript and XML"</p>
 <pre><code class="javascript">
 $.ajax({
-  url: "http://fiddle.jshell.net/favicon.png",
+  url: "img/cat.jpg",
   beforeSend: function( xhr ) {
     xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
   }
 })
 .done(function( data ) {
-  if ( console && console.log ) {
-    console.log( "Sample of data:", data.slice( 0, 100 ) );
-  }
+  console.log( "Sample of data:", data.slice( 0, 100 ) );
 });
+
+// outputs:
+// Sample of data: JFIF;CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 85
+// C 
 </code></pre>
+          <p><small><a href="http://api.jquery.com/jQuery.ajax/" target="_blank" title="Link opens in a new window">jQuery AJAX Documentation</a></small></p>
+        </section>
+
+        <section>
+          <h3>Let's Develop It!</h3>
+          <p>In <a href="exercises/exercise4.html" target="_blank" title="Link opens in a new window">exercise 4</a>, let's make an AJAX request and append the response data to an HTML page.</p>
+        </section>
+
+        <section>
+          <h3>APIs</h3>
+          <p>Here are some projects that use them:</p>
+          <ul>
+            <li><a href="http://marcysutton.github.io/gdi-intro-to-jquery/exercises/instagallery.html" target="_blank" title="Link opens in a new window">Instagallery</a> <br>
+              <small><a href="http://instagram.com/developer/" target="_blank" title="Link opens in a new window">[Instagram API Documentation]</a></small></li>
+            <li><a href="http://substantial.com/timeframe/" target="_blank" title="Link opens in a new window">Timeframe</a> <br>
+              <small><a href="http://www.flickr.com/services/api/" target="_blank" title="Link opens in a new window">[Flickr API Documentation]</a></small></li>
+            <li><a href="http://www.raymondcamden.com/index.cfm/2014/2/2/Examples-of-the-Marvel-API" target="_blank" title="Link opens in a new window">Marvel API</a></li>
+          </ul>
         </section>
 
         <section>
@@ -184,8 +218,41 @@ $( "button" ).on( "click", function() {
         <!-- Best Practices -->
         <section>
           <h3>Best Practices</h3>
+          <p>Put selectors in variables for reuse</p>
+          <p>This:</p>
+          <pre><code class="javascript">
+var elPageHeader = $('#header'),
+    elHeaderListItems = elPageHeader.find('li'),
+    elHeaderLinks = elPageHeader.find('a');
+
+elHeaderListItems.addClass('fancy');
+elHeaderLinks.attr('title', 'The best links');
+          </code></pre>
+          <p>Instead of this:</p>
+          <pre><code class="javascript">
+$('#header li').addClass('fancy');
+$('#header li a').attr('title', 'Some cool link');
+          </code></pre>
         </section>
 
+        <section>
+          <h3>Best Practices</h3>
+          <p>Event delegation</p>
+          <pre><code class="javascript">
+  var listItems = $('#longlist');
+
+  list.on("mouseenter", "li", function(){
+    $(this).text("Click me!");
+  });
+
+  list.on("click", "li", function() {
+    $(this).text("Why did you click me?!");
+  });
+          </code></pre>
+          <p><small><a href="http://api.jquery.com/on/" target="_blank" title="Link opens in a new window">jQuery On method</a></small></p>
+        </section>
+
+        <!-- Questions -->
         <section>
           <h2>Questions?</h2>
           <div style="font-size:1200%; height:100%; margin-top:30%" class="blue">?
