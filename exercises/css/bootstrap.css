@@ -2988,3 +2988,21 @@ a.thumbnail:hover {
 .invisible {
   visibility: hidden;
 }
+fieldset {
+  margin: 10px 0;
+}
+button, 
+input[type='submit'] {
+  border-radius: 5px;
+  border-width: 0;
+  color: #000;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+}
+button:hover,
+button:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
+  background-color: #333;
+  color: #fff;
+}
