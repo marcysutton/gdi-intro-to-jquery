@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Exercise</title>
+</head>
+<body>
+	<h1>Kittehs!</h1>
+	<div id="content">
+		<p>Loading...</p>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var elContent = $('#content');
+		/* This requires Firefox due to Access-Control-Allow-Origin restrictions in Chrome */
+		$.ajax({
+			dataType: 'text',
+		  url: "http://marcysutton.github.io/gdi-intro-to-jquery/kitty-ipsum.txt"
+		})
+		.success(function( data ) {
+		  elContent.text(data)
+		})
+		.error(function( param ) {
+			console.log(param.statusText);
+		});
+	});
+</script>
+</body>
+</html>
