@@ -365,11 +365,12 @@ $('a').css({'color': 'purple'})
             </div>
           </div>
         </section>
-        
+
         <section>
           <h3>jQuery: Looping</h3>
           <p class="orig"><a href="http://yahoo.com">Yahoo</a><br>
           <a href="http://google.com">Google</a></p>
+          <span class="down-arrow"></span>
           <pre><code class="javascript">
 var links = $('a');
 links.each(function() {
@@ -377,59 +378,14 @@ links.each(function() {
   link.text(link.text() + '!');
 });
           </code></pre>
+          <span class="down-arrow"></span>
           <p><a href="http://yahoo.com">Yahoo!</a><br>
           <a href="http://google.com">Google!</a></p>
         </section>
 
         <section>
-          <h3>Let's Develop It!</h3>
-          <p>In <a href="exercises/exercise2.html" target="_blank" title="Link opens in a new window">exercise 2</a>, you'll turn an unordered list of link titles into a linked list of thumbnails with jQuery, instead of native JavaScript.</p>
-        </section>
-        
-        <!-- Events -->
-        <section>
-          <h3>Events</h3>
-          <pre><code class="javascript">
-function onButtonClick() {
-  console.log('clicked!');
-}
-
-$('#button').on('click', onButtonClick);
-          </code></pre>
-          <pre><code class="javascript">
-$('#button').on('click', function () {
-  console.log('clicked!');
-});
-          </code></pre>
-        </section>
-
-        <section>
-          <h3>Events</h3>
-          <pre><code class="javascript">
-$('a').on('click', function (event) {
-  event.preventDefault();
-  console.log('Not going there!');
-});
-          </code></pre>
-        </section>
-        
-        <section>
-          <h3>The Event Object</h3>
-          <p>The 'event' parameter provides a return value that is treated in a special way, telling us a variety of things about our event, such as the type or target element.</p>
-          <pre><code class="javascript">
-$('a').on('click keypress', function (event) {
-  console.log(event);
-  
-  if(event.type === 'keypress'){
-    console.log(event.keyCode);
-  }
-});
-          </code></pre>
-
-        </section>
-
-        <section>
           <h3>The DOM-Ready Event</h3>
+          <p>Necessary to manipulate a document safely.</p>
           <pre><code class="javascript">
 $(document).ready(function() {
   // Do everything
@@ -441,80 +397,18 @@ $(function() {
   // Do everything
 });
           </code></pre>
+          <p><small>Read more: <a href="http://learn.jquery.com/using-jquery-core/document-ready/" target="_blank" title="Link opens in a new window">http://learn.jquery.com/using-jquery-core/document-ready/</a></small></p>
         </section>
 
         <section>
-          <h3>Effects & Animation</h3>
-          <pre><code class="javascript">
-$('#error').toggle(1000);
-
-$('#error').fadeIn();
-
-$('#error').show(1000, function(){
-  $(this).addClass('redText')
-});
-          </code></pre>
-        </section>
-
-        <section>
-        <h3>Chaining</h3>
-          <pre><code class="javascript">
-banner.css('color', 'red');
-banner.html('Welcome!');
-banner.show();
-          </code></pre>
-          <p>Is the same as:</p>
-          <pre><code class="javascript">
-banner.css('color', 'red').html('Welcome!').show();
-          </code></pre>
-          <p>Is the same as:</p>
-          <pre><code class="javascript">
-banner.css('color', 'red')
- .html('Welcome!')
- .show();
-       </code></pre>
-        </section>
-
-        <section>
-          <h3>AJAX</h3>
-          <p>"Asynchronous JavaScript and XML"</p>
-<pre><code class="javascript">
-$.ajax({
-  url: "http://fiddle.jshell.net/favicon.png",
-  beforeSend: function( xhr ) {
-    xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
-  }
-})
-.done(function( data ) {
-  if ( console && console.log ) {
-    console.log( "Sample of data:", data.slice( 0, 100 ) );
-  }
-});
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Promises</h3>
-          <p>Promises are sort-of like events, providing callbacks for processes yet to be completed. But they help us deal with JS being single-threaded.</p>
-          <pre><code class="javascript">
-$( "button" ).on( "click", function() {
-  $( "p" ).append( "Started..." );
-
-  $( "div" ).each(function( i ) {
-    $( this ).fadeIn().fadeOut( 1000 * ( i + 1 ) );
-  });
-
-  $( "div" ).promise().done(function() {
-    $( "p" ).append( " Finished! " );
-  });
-});
-          </code></pre>
-          <p><a href="http://www.html5rocks.com/en/tutorials/es6/promises/" target="_blank" title="Link opens in a new window">A great Promises article</a></p>
+          <h3>Let's Develop It!</h3>
+          <p>In <a href="exercises/exercise2.html" target="_blank" title="Link opens in a new window">exercise 2</a>, you'll append video thumbnails like exercise 1 but with jQuery instead of native JavaScript.</p>
         </section>
         
-        <!-- Best Practices -->
         <section>
-          <h3>Best Practices</h3>
+          <h2>Questions?</h2>
+          <div style="font-size:1200%; height:100%; margin-top:30%" class="blue">?
+            <div class="clear"></div></div>
         </section>
 			</div>
   		<footer>
