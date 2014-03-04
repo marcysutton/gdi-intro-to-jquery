@@ -1,0 +1,82 @@
+html, body, div, span, p, a,
+ul, li, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: 'Century Gothic', Helvetica, sans-serif;
+	min-height: 100%;
+	text-align: center;
+}
+	h1 {
+		font-size: 48px;
+		letter-spacing: -0.025em;
+		margin: 30px 0 20px;
+		text-align: center;
+		width: 100%;
+	}
+	p {
+		margin: 0 0 10px;
+		text-align: center;
+	}
+	a, a:visited {
+		color: #f05b62;
+	}
+	a:focus, a:hover {
+		color: #01a9b4;
+	}
+	div#wrapper {
+		height: 100%;
+		overflow: auto;
+		position: absolute;
+		width: 100%;
+	}
+		div#loading {
+			background: transparent url(../img/ajax-loader.gif) no-repeat center center;
+			display: none;
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			z-index: 2;
+		}
+		div#images {
+			height: 100%;
+			margin: 0 auto;
+			padding: 0;
+			position: relative;
+			width: 95%;
+			z-index: 1;
+		}
+			div#images ul {
+				display: block;
+				float: left;
+				height: 100%;
+				width: 100%;
+			}
+				div#images ul li {
+					border: 0;
+					float: left;
+					list-style-type: none;
+					margin: 10px;
+					width: auto;
+				}
+					div#images ul li img {
+						display: none;
+					}
+			div#images ul li h2 {
+				font-size: 22px;
+			}
+			div#images ul li p {
+				margin: 40px;
+			}
+		.clear {
+			clear: both;
+		}
+		.offscreen {
+			display: block;
+			left: -50000px;
+			position: absolute;
+		}

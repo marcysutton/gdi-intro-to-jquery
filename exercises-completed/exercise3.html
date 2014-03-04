@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>Exercise 3</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1 class="page-header">Let's Play with Events!</h1>
+      </div>
+    </div>
+ 
+    <div class="row">
+      <div class="span3">
+        <button id="randomBtn">Random Button</button>
+        <hr />
+        <form>
+          <fieldset>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" />
+          </fieldset>
+          <fieldset>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" />
+          </fieldset>
+          <input type="submit" value="Submit">
+        </form>
+       </div>
+     </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        // your code here
+        var elRandomButton = $('#randomBtn'),
+            elForm = $('form'),
+            elFirstNameInput = elForm.find('input#first-name'),
+            elLastNameInput = elForm.find('input#last-name'),
+            elSubmitBtn = elForm.find('input[type=submit]');
+
+        elRandomButton.on({
+          'keypress': function(e) {
+            console.log(e.type);
+          },
+          'click': function(e) {
+            console.log(e.type);
+          }
+        });
+        elForm.on('submit', function(e){
+          e.preventDefault();
+          console.log('submit stopped');
+        });
+      });
+    </script>
+  </body>
+</html>
