@@ -239,16 +239,16 @@ $.ajax({
         <section>
           <h3>Best Practices</h3>
           <p>Put selectors in variables for reuse</p>
-          <p>This:</p>
+          <p style="margin-top: 0; line-height: 0.5em;"><small>This:</small></p>
           <pre><code class="javascript">
-var elPageHeader = $('#header'),
-    elHeaderListItems = elPageHeader.find('li'),
-    elHeaderLinks = elPageHeader.find('a');
+var elHeader = $('#header'),
+    elListItems = elHeader.find('li'),
+    elLinks = elHeader.find('a');
 
-elHeaderListItems.addClass('fancy');
-elHeaderLinks.attr('title', 'The best links');
+elListItems.addClass('fancy');
+elLinks.attr('title', 'The best links');
           </code></pre>
-          <p>Instead of this:</p>
+          <p style="margin-bottom: 0; line-height: 0.5em;"><small>Instead of this:</small></p>
           <pre><code class="javascript">
 $('#header li').addClass('fancy');
 $('#header li a').attr('title', 'Some cool link');
@@ -259,7 +259,7 @@ $('#header li a').attr('title', 'Some cool link');
           <h3>Best Practices</h3>
           <p>Event delegation</p>
           <pre><code class="javascript">
-  var listItems = $('#longlist');
+  var list = $('ul.longlist');
 
   list.on("mouseenter", "li", function(){
     $(this).text("Click me!");
