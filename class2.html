@@ -102,20 +102,26 @@ $('#button').on('click', function() {
   console.log('clicked!');
 });
           </code></pre>
+          <p><small><a href="http://api.jquery.com/on/" target="_blank" title="Link opens in a new window">jQuery .on() method documentation</a></small></p>
         </section>
         
         <section>
           <h3>The Event Object</h3>
-          <p>The 'event' parameter provides a return value that is treated in a special way, telling us a variety of things about our event, such as the type or target element.</p>
+          <p>The 'event' parameter provides a return value that is treated in a special way, telling us a variety of things about our event, such as the type or element clicked.</p>
           <pre><code class="javascript">
-$('a').on('click keypress', function(event) {
+$('a').on('keypress', function(event) {
+  
+  // outputs event object
   console.log(event);
   
-  if(event.type === 'keypress'){
-    console.log(event.keyCode);
-  }
+  // outputs value for key pressed
+  console.log(event.which);
+
+  // outputs element clicked
+  console.log(event.target);
 });
           </code></pre>
+          <p><small><a href="http://api.jquery.com/category/events/event-object/" target="_blank" title="Link opens in a new window">jQuery Event Object documentation</a></small>
         </section>
 
         <section>
@@ -129,6 +135,7 @@ $('a').on('click keypress', function(event) {
     // Maybe I want to do stuff first.
   });
           </code></pre>
+          <p><small><a href="http://css-tricks.com/return-false-and-prevent-default/" target="_blank" title="Link opens in a new window">event.preventDefault() vs. return false; on CSS-Tricks</a></small></p>
         </section>
 
         <section>
@@ -136,7 +143,6 @@ $('a').on('click keypress', function(event) {
           <p>Keeping Track of Scope</p>
           <pre><code class="javascript">
   var _this = this;
-  console.log(_this);
 
   $('a').on('click', function(event) {
     console.log(this);
@@ -156,7 +162,7 @@ $('#error').show(1000, function(){
   $(this).addClass('alert')
 });
           </code></pre>
-          <p><small>Read more: <a href="http://api.jquery.com/category/effects/" target="_blank" title="Link opens in a new window">jQuery Effects Documentation</a></small></p>
+          <p><small><a href="http://api.jquery.com/category/effects/" target="_blank" title="Link opens in a new window">jQuery Effects Documentation</a></small></p>
         </section>
 
         <section>
