@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Promises</title>
+	<style>
+		html, body { font-family: Helvetica, Arial, sans-serif; }
+		div { background-color: red; height: 20px; margin: 30px 10px 0; width: 50px; }
+		button { background-color: #999; border-width: 0; border-radius: 5px; color: #fff; font-size: 1em; padding: 5px 15px; }
+	</style>
+</head>
+<body>
+	<h1>Promises</h1>
+	<button>Button</button>
+	<p></p>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script src="exercises/js/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+	  var p = $("p");
+	  $("button").on("click", function() {
+	    p.append(" Started... ");
+
+	    $("div").each(function( index ) {
+	      $(this).fadeIn().fadeOut( 1000 * ( index + 1 ) );
+	    })
+	    .promise().done(function() {
+	      p.append(" Finished! ");
+	    });
+	  });
+	});
+	</script>
+</body>
+</html>

@@ -220,19 +220,19 @@ $.ajax({
           <h3>Promises</h3>
           <p>Promises are sort-of like events, providing callbacks for processes yet to be completed. But they help us deal with JS being single-threaded.</p>
           <pre><code class="javascript">
-$( "button" ).on( "click", function() {
-  $( "p" ).append( "Started..." );
+  var p = $("p");
+  $("button").on("click", function() {
+    p.append(" Started... ");
 
-  $( "div" ).each(function( i ) {
-    $( this ).fadeIn().fadeOut( 1000 * ( i + 1 ) );
+    $("div").each(function( index ) {
+      $(this).fadeIn().fadeOut( 1000 * ( index + 1 ) );
+    })
+    .promise().done(function() {
+      p.append(" Finished! ");
+    });
   });
-
-  $( "div" ).promise().done(function() {
-    $( "p" ).append( " Finished! " );
-  });
-});
           </code></pre>
-          <p><a href="http://www.html5rocks.com/en/tutorials/es6/promises/" target="_blank" title="Link opens in a new window">A great Promises article</a></p>
+          <p><small><a href="http://www.html5rocks.com/en/tutorials/es6/promises/" target="_blank" title="Link opens in a new window">A great Promises article</a></small></p>
         </section>
         
         <!-- Best Practices -->
