@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Review</title>
+	<style>
+		html, body { font-family: Helvetica, Arial, sans-serif; }
+		ul { margin: 0; }
+			li { margin: 20px; }
+				img { display: block; margin: 10px 0; }
+	</style>
+</head>
+<body>
+	<h1>jQuery Review</h1>
+	<div id="somePageId">
+		<ul>
+			<li><a href="#">Link 1</a></li>
+			<li><a href="#">Link 2</a></li>
+			<li><a href="#">Link 3</a></li>
+		</ul>
+	</div>
+	<script src="exercises/js/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+	  var someElement = $('#somePageId');
+	  var links = someElement.find('a');
+	  
+	  links.each(function(index, element){
+		  var imageElement = $('<img>');
+	    var imageUrl = 'http://lorempixel.com/'+(index+1)*200+'/200/';
+	    $(this).append(imageElement.attr({
+	    	'src': imageUrl,
+	    	'alt': ''
+		    })
+	    );
+	    $(this).addClass('someClass');
+	  });
+	});
+	</script>
+</body>
+</html>

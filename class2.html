@@ -60,6 +60,32 @@
           </div>
         </section>
         
+        <!-- Review -->
+        <section>
+          <h3>Let's Review</h3>
+          <p>What we've learned</p>
+          <pre><code class="javascript">
+$(document).ready(function(){
+  var someElement = $('#somePageId');
+  var links = someElement.find('a');
+  
+  links.each(function(index, element){
+    var imageElement = $('&lt;img&gt;');
+
+    var imageUrl = 'http://lorempixel.com/'+(index+1)*200+'/200/';
+    
+    $(this).append(imageElement.attr({
+      'src': imageUrl,
+      'alt': ''
+      })
+    );
+    $(this).addClass('someClass');
+  });
+});
+          </code></pre>
+          <p><small><a href="class2-jquery-review.html" target="_blank" title="Link opens in a new window">View in browser</a></small></p>
+        </section>
+
         <!-- Events -->
         <section>
           <h3>Events</h3>
