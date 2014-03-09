@@ -23,13 +23,23 @@
 <script src="js/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
+		var contentDiv = $('#content');
     $.ajax({  
-		    url: "kitty-ipsum.json",  
+		    url: "cats.json",  
 		    dataType: "json",
 		    success: function(response) { 
 		    	console.log(response);
-		    	$('#content').find('p').html(response.data);
-		    }  
+
+		    	var cat_data = response.data;
+		    	var image = $('<img>');
+		    	image.attr({
+		    		'src':cat_data.image_url,
+		    		'alt':cat_data.image_alt
+		    	});
+
+		    	contentDiv.find('p').html(cat_data.paragraph)
+		    		.append(image);
+		    }
 		});  
 	});
 </script>
