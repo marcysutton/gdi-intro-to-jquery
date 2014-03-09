@@ -189,26 +189,84 @@ banner.css('color', 'red')
           <h3>Let's Develop It!</h3>
           <p>In <a href="exercises/exercise3.html" target="_blank" title="Link opens in a new window">exercise 3</a>, let's bind some events and play with chaining.</p>
         </section>
-
+        
+        <!-- AJAX -->
         <section>
           <h3>AJAX</h3>
           <p>"Asynchronous JavaScript and XML"</p>
-<pre><code class="javascript">
+          <pre><code class="javascript">
 $.ajax({
-  url: "img/cat.jpg",
-  beforeSend: function( xhr ) {
-    xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
-  }
-})
-.done(function( data ) {
-  console.log( "Sample of data:", data.slice( 0, 100 ) );
+  "url": "foo/bar/mydata.txt",
+  "type": "GET",
+  "success": mySuccessFunction,
+  "error": ajaxFailure
 });
-
-// outputs:
-// Sample of data: JFIF;CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 85
-// C 
-</code></pre>
-          <p><small><a href="http://api.jquery.com/jQuery.ajax/" target="_blank" title="Link opens in a new window">jQuery AJAX Documentation</a></small></p>
+function mySuccessFunction(data) {
+  // do something with the data
+}
+function ajaxFailure(xhr, status, exception) {
+  console.log(xhr, status, exception);
+}
+          </code></pre>
+          <p><small><a href="https://courses.cs.washington.edu/courses/cse190m/12su/lectures/slides/lecture18-ajax.shtml" target="_blank" title="Link opens in a new window">A great lecture on AJAX from UW CS</a></small></p>
+        </section>
+        
+        <section>
+          <h3>AJAX Options</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>option</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>url</td>
+                <td>The URL to make a request from</td>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>whether to use POST or GET</td>
+              </tr>
+              <tr>
+                <td>data</td>
+                <td>an object literal filled with query parameters and their values</td>
+              </tr>
+              <tr>
+                <td>dataType</td>
+                <td>The type of data you are expecting to recieve, one of: "text", "html", "json", "xml"</td>
+              </tr>
+              <tr>
+                <td>timeout</td>
+                <td>an amount of time in seconds to wait for the server before giving up</td>
+              </tr>
+              <tr>
+                <td>success</td>
+                <td><em>event:</em> called when the request finishes successfully</td>
+              </tr>
+              <tr>
+                <td>error</td>
+                <td><em>event:</em> called when the request fails</td>
+              </tr>
+              <tr>
+                <td>complete</td>
+                <td><em>event:</em> called when the request finishes successfully or erroneously</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section>
+          <h3>AJAX Security Concerns</h3>
+          <p>The "Same-Origin Policy"</p>
+          <div><img src="images/same-origin-policy.png" alt="Cross-domain error"></div>
+          <ul class="smaller">
+            <li>Ajax must be run on a web page stored on a web server*</li>
+            <li>Ajax can only fetch files from the same server<br />
+<small><span class="code">http://www.foo.com/a/b/c.html</span> can only fetch from <span class="code">www.foo.com</span></small></li>
+          </ul>
+          <small><em>* Firefox will allow AJAX loading on your local file system, but Chrome will not. Use MAMP or XAMPP to test AJAX locally.</em></small>
         </section>
 
         <section>

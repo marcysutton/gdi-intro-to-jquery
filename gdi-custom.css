@@ -52,6 +52,13 @@
 .reveal .gray {
   color: #999;
 }
+.reveal .smaller {
+  font-size: 0.8em;
+}
+.reveal span.code {
+  font-family: 'Menlo', monospace;
+  margin: 0 4px;
+}
 .down-arrow {
   display: block;
   text-align: center;
@@ -90,10 +97,6 @@
   .col.col3 p {
     font-size: 0.7em;
   }
-
-.code-explanation {
-  
-}
   .code-explanation .code {
     display: inline-block;
     position: relative;
@@ -116,3 +119,25 @@
     vertical-align: middle;
     width: 40%;
   }
+.reveal table {
+  border-collapse: collapse;
+}
+.reveal table th {
+  border-bottom: 1px solid white;
+}
+.reveal table th:last-child,
+.reveal table td:last-child {
+  padding-left: 1em;
+}
+.reveal table th:first-child,
+.reveal table td:first-child {
+  border-right: 1px solid white;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  white-space: nowrap;
+}
+.reveal table th, .reveal table td {
+  font-size: 0.65em;
+  line-height: 1.25em;
+  padding: 0;
+}
