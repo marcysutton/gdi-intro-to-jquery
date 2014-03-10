@@ -18,8 +18,11 @@ http://marcysutton.github.io/gdi-intro-to-jquery/exercises-completed.zip
 What is a library? How do I include and use one?
 Survey the audience to make sure they know JavaScript basics to prep for a native JS exercise: variables, arrays, looping, createElement, setAttribute, appendChild.
 Discuss the purpose of libraries and show the difference between native JS and jQuery.
-Moving onto jQuery basics, you will explain how to include the library and then go over usage: adding CSS classes; explaining the $ symbol; finding, creating, changing and reading elements; iterating over jQuery collections. In Exercise 2, students will recreate Exercise 1 with jQuery.
-Next, you will go over chaining and events: interactions, DOM ready, Effects & Animation, scoping and "this". Talk about AJAX and how to work with async operations. Finally, go over some jQuery best practices such as caching selectors and performant selector lookups. End with an example that ties everything together!
+Moving onto jQuery basics, you will explain how to include the library and then go over usage: adding CSS classes; explaining the $ symbol; finding, creating, changing and reading elements; iterating over jQuery collections; the DOM ready event. In Exercise 2, students will recreate Exercise 1 with jQuery.
+
+## Class 2
+
+In class 2, you will go over chaining and events: interactions, Effects & Animation, scoping and "this". Talk about AJAX and how to work with async operations, with a touch on Promises. Finally, go over some jQuery best practices such as caching selectors and performant selector lookups. End with an example that ties everything together!
 
 ## Theme customization
 
