@@ -4,6 +4,15 @@ This is an Intro to jQuery class based on http://teaching-materials.org/jquery/ 
 
 The course is meant to be taught in 1 two-hour section. Each of the slides and practice files are customizable according to the needs of a given class or audience.
 
+Slides: 
+http://marcysutton.github.io/gdi-intro-to-jquery/
+
+Exercises: 
+http://marcysutton.github.io/gdi-intro-to-jquery/exercises.zip
+
+Completed Exercises: 
+http://marcysutton.github.io/gdi-intro-to-jquery/exercises-completed.zip
+
 ## Class 1
 
 What is a library? How do I include and use one?
