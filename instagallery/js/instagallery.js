@@ -5,17 +5,19 @@
  * 2/23/14
  **/
  
-var Instagallery = function() {
+var Instagallery = function(options) {
 
 	$('body').removeClass('no-js');
 	
+	var splitHash = options.access_token.split('#')[1];
+
 	// element references
 	this.loader = $('#loading');
 	this.list = $('ul');
 	this.listItems = this.list.find('li');
 	
 	// variables 
-	this.accessToken = '1124578234.b3722f0.42d8a8bf68674fc2895b912580748749';
+	this.accessToken = splitHash;
 	this.totalImages = 0;
 	this.imgWidth = 0;
 	
@@ -36,7 +38,7 @@ Instagallery.prototype = {
 		// load Instagram media.
 		$.ajax({
 				'dataType' : 'jsonp',
-				'url' : 'https://api.instagram.com/v1/tags/girldevelopit/media/recent?access_token='+self.accessToken+'&callback=?', 
+				'url' : 'https://api.instagram.com/v1/tags/girldevelopit/media/recent?'+self.accessToken+'&callback=?', 
 				'success' : function(response) {
 					self.totalImages = response.data.length;
 					
