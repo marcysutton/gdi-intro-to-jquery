@@ -30,7 +30,12 @@ Instagallery.prototype = {
 	initialize: function() {		
 		this.loader.fadeIn();
 		
-		this.getInstagram();
+		if(this.accessToken !== undefined){
+			this.getInstagram();
+		}
+		else {
+			window.location = 'index.html';
+		}
 	},
 	getInstagram: function(){
 		var self = this;
