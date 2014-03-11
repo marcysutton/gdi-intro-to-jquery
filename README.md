@@ -2,7 +2,7 @@
 
 This is an Intro to jQuery class based on http://teaching-materials.org/jquery/ and adapted by Marcy Sutton of GDI Seattle. Intro to HTML & CSS and Intro to JavaScript are prerequisites.
 
-The course is meant to be taught in 1 two-hour section. Each of the slides and practice files are customizable according to the needs of a given class or audience.
+The course is meant to be taught in 2 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.
 
 Slides: 
 http://marcysutton.github.io/gdi-intro-to-jquery/
